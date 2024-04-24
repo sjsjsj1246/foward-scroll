@@ -1,0 +1,67 @@
+body {
+  height: 500vw;
+}
+
+.world {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+}
+
+.stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.house {
+  width: 100vw;
+  height: 100vh;
+  transform: translateZ(-490vw);
+  transform-style: preserve-3d;
+}
+
+.wall {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(236, 232, 128, 0.741);
+}
+
+.wall-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wall-title {
+  font-size: 5rem;
+}
+
+.wall-left {
+  width: 1000vw;
+  height: 100vh;
+  background-color: #f0f0f0;
+  transform: rotateY(90deg) translateZ(-500vw);
+}
+
+.wall-right {
+  width: 1000vw;
+  height: 100vh;
+  background-color: #f0f0f0;
+  transform: rotateY(90deg) translateZ(-400vw);
+}
+
+.wall-front-a {transform: translateZ(300vw);}
+.wall-front-b {transform: translateZ(50vw);}
+.wall-front-c {transform: translateZ(-200vw);}
+.wall-front-d {transform: translateZ(-500vw);}
