@@ -1,0 +1,11 @@
+{
+  "name": "foward-scroll",
+  "author": "sjsjsj1246",
+  "main": "index.html",
+  "scripts": {
+    "start": "tsc -w"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
