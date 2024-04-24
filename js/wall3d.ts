@@ -1,8 +1,8 @@
 const HOUSE_BASE_Z = -490
 
 class Wall3D {
-    private _scrollRange: number = 0;
-    private _mousePosition = {x: 0, y: 0}
+    private _scrollRange: number = 0
+    private _mousePosition = { x: 0, y: 0 }
     private $house: HTMLElement
     private $progressBar: HTMLElement
 
@@ -36,6 +36,6 @@ class Wall3D {
     }
 }
 
-window.onload = function() {
+window.onload = function () {
     new Wall3D()
 }
