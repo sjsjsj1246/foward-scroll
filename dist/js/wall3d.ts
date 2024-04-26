@@ -8,16 +8,19 @@ class Wall3D {
     private $house: HTMLElement;
     private $progressBar: HTMLElement;
     private $stage: HTMLElement;
+    private $selectCharacter: HTMLElement;
 
     constructor() {
         this.$house = document.querySelector('.house')!;
         this.$progressBar = document.querySelector('.progress-bar')!;
         this.$stage = document.querySelector('.stage')!;
+        this.$selectCharacter = document.querySelector('.select-character')!;
         this._resizeHandler();
         window.addEventListener('scroll', this._scrollHandler.bind(this));
         window.addEventListener('resize', this._resizeHandler.bind(this));
         window.addEventListener('mousemove', this._mouseMoveHandler.bind(this));
-        window.addEventListener('click', this._handleClick.bind(this));
+        this.$stage.addEventListener('click', this._handleClickStage.bind(this));
+        this.$selectCharacter.addEventListener('click', this._handleClickSeletCharacter.bind(this));
     }
 
     private get _scrollRatio(): number {
@@ -41,8 +44,13 @@ class Wall3D {
         this.$stage.style.transform = `rotateX(${this._mousePosition.y * 5}deg) rotateY(${this._mousePosition.x * 5}deg)`;
     }
 
-    private _handleClick(e: MouseEvent): void {
+    private _handleClickStage(e: MouseEvent): void {
         new Character({ xPos: (e.clientX / window.innerWidth) * 100, speed: Math.random() * 0.5 + 0.2 });
+    }
+
+    private _handleClickSeletCharacter(e: MouseEvent): void {
+        const value = (e.target as HTMLElement)?.getAttribute('data-char');
+        value && document.body.setAttribute('data-char', value);
     }
 }
 

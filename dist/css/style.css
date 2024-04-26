@@ -21,6 +21,11 @@
 
 body {
   height: 500vw;
+  font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic, 'Malgun Gothic', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  color: #555;
+  background: #ffffff;
+  transition: background .5s;
 }
 
 .world {
@@ -253,3 +258,40 @@ body[data-char='ragirl'] .character-leg-left {
 }
 body[data-char='ragirl'] .character-leg-left .face-front { background-image: url('../images/ragirl_leg_1.png'); }
 body[data-char='ragirl'] .character-leg-left .face-back { background-image: url('../images/ragirl_leg_0.png'); }
+
+/* character button */
+.select-character {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 100;
+}
+.select-character-btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+  border: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.select-character-btn-ilbuni {
+  background-image: url('../images/ilbuni_head_front.png');
+  background-size: 36px auto;
+}
+.select-character-btn-ragirl {
+  background-image: url('../images/ragirl_head_front.png');
+  opacity: 0.5;
+}
+body[data-char='ragirl'] .select-character-btn-ilbuni {
+  opacity: 0.5;
+}
+body[data-char='ilbuni'] .select-character-btn-ilbuni,
+body[data-char='ragirl'] .select-character-btn-ragirl {
+  opacity: 1;
+}
